@@ -32,9 +32,9 @@ with st.form(key='my_taxifare'):
     passenger_count = st.number_input("Number of passenger", value=1, min_value=1, max_value=8)
     
     submitted = st.form_submit_button(label='Calculate my taxifare')
-'''
+
 # Show Result    
-#if submitted:
+if submitted:
    # Instantiate Geolocator and get lat long of pickup and dropoff
     geolocator = Nominatim(user_agent="taxifare")
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -42,7 +42,7 @@ with st.form(key='my_taxifare'):
     dropoff_location = geocode(dropoff_address)
     
     # Show response to user
-    if (pickup_location and dropoff_location):
+    '''if (pickup_location and dropoff_location):
         # Get taxifare from API
         request_url = url+f"?pickup_datetime={date}%20{time}&pickup_longitude={pickup_location.longitude}&pickup_latitude={pickup_location.latitude}&dropoff_longitude={dropoff_location.longitude}&dropoff_latitude={dropoff_location.latitude}&passenger_count={passenger_count}"
         response = requests.get(request_url)
