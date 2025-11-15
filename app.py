@@ -42,18 +42,16 @@ if submitted:
     dropoff_location = geocode(dropoff_address)
     
     # Show response to user
-    '''if (pickup_location and dropoff_location):
+    if (pickup_location and dropoff_location):
         # Get taxifare from API
         request_url = url+f"?pickup_datetime={date}%20{time}&pickup_longitude={pickup_location.longitude}&pickup_latitude={pickup_location.latitude}&dropoff_longitude={dropoff_location.longitude}&dropoff_latitude={dropoff_location.latitude}&passenger_count={passenger_count}"
         response = requests.get(request_url)
         st.text("")
         st.write(f'#### 🚖 Your taxi fare will cost around {round(response.json()['fare'], 2)} USD.')
         
-        # Show map with pickup and dropoff locations
+        '''# Show map with pickup and dropoff locations
         df = pd.DataFrame({'lat': [pickup_location.latitude, dropoff_location.latitude], 'lon': [pickup_location.longitude, dropoff_location.longitude]})
         st.map(df)
-    
+        '''
     else:
         st.write("Couldn't find pickup or dropoff address")
-
-'''
