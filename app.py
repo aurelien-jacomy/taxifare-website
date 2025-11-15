@@ -11,7 +11,7 @@ from geopy.extra.rate_limiter import RateLimiter
 st.write("Hello!")
 #url = 'https://taxifare.lewagon.ai/predict'
 
-'''url = 'https://taxifare-495542883015.southamerica-east1.run.app/predict'
+url = 'https://taxifare-495542883015.southamerica-east1.run.app/predict'
 
 if url == 'https://taxifare.lewagon.ai/predict':
 
@@ -32,7 +32,7 @@ with st.form(key='my_taxifare'):
     passenger_count = st.number_input("Number of passenger", value=1, min_value=1, max_value=8)
     
     submitted = st.form_submit_button(label='Calculate my taxifare')
-
+'''
 # Show Result    
 #if submitted:
    # Instantiate Geolocator and get lat long of pickup and dropoff
