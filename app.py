@@ -49,9 +49,9 @@ if submitted:
         st.text("")
         st.write(f'#### 🚖 Your taxi fare will cost around {round(response.json()['fare'], 2)} USD.')
         
-        '''# Show map with pickup and dropoff locations
+        # Show map with pickup and dropoff locations
         df = pd.DataFrame({'lat': [pickup_location.latitude, dropoff_location.latitude], 'lon': [pickup_location.longitude, dropoff_location.longitude]})
         st.map(df)
-        '''
+        
     else:
         st.write("Couldn't find pickup or dropoff address")
